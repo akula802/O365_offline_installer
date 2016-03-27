@@ -49,3 +49,15 @@ SCREENSHOTS OF FOLDER STRUCTURE:
 
 <a href="http://i.imgur.com/hDTu8Id.png" target="blank">3. Final contents of product subfolders</a>
 
+-----------------------------
+
+SCREENSHOTS OF PROGRAM IN USE:
+
+<a href="http://i.imgur.com/JHWbuTp.png" target="blank">1. Product selection</a>
+
+<a href="http://i.imgur.com/5rSYDCq.png" target="blank">2. Input verification</a>
+
+<a href="http://i.imgur.com/5Ak10Vi.png" target="blank">3. Existing Office installation detected</a>
+
+<a href="http://i.imgur.com/qbuaUyB.png" target="blank">4. Installation successful</a>
+
