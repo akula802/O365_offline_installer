@@ -1,0 +1,24 @@
+<!-- Configuration file for installing O365 2013 -->
+
+<Configuration>
+
+  <Add SourcePath="\\FULL-DESTINATION-PATH\Cannot-be-relative" OfficeClientEdition="32" >
+
+    <!-- https://support.microsoft.com/en-us/kb/2842297 -->
+    <!-- Uncomment the follwing Product IDs as necessary and delete this file when done -->
+    
+    <Product ID="O365ProPlusRetail">
+    <!-- <Product ID="O365BusinesRetail"> -->
+    <!-- <Product ID="O365SmallBusPremRetail"> -->
+    <!-- <Product ID="ProjectProRetail"> -->
+    <!-- <Product ID="VisioProRetail"> -->
+    <!-- <Product ID="LyncEntryRetail"> -->
+      <Language ID="en-us" />
+    </Product>
+
+  </Add>
+
+  <!-- Uncomment below if you need logging, destination can be a UNC path -->
+  <!-- <Logging Level="Standard" Path="C:\Logs\" /> -->
+
+</Configuration>
