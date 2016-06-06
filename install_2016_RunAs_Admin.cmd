@@ -12,7 +12,7 @@ echo 1. Office 365 ProPlus, E3, E4, or Midsize
 echo 2. Office 365 Business or Business Premium
 echo 3. Office 365 Small Business Premium
 echo 4. I only need Project or Visio
-echo 5. I only need Skype for Business (Lync)
+echo 5. I only need Skype for Business
 echo 6. None of these - exit program
 echo[
 
@@ -109,6 +109,7 @@ echo[
 echo Installing Office 365 ProPlus...
 %~dp0\SOURCES\ProPlus\setup.exe /configure "%~dp0\SOURCES\ProPlus\install.xml" > NUL
 echo Done!
+echo[
 echo Installing Microsoft Project...
 %~dp0\SOURCES\Project\setup.exe /configure "%~dp0\SOURCES\Project\install.xml" > NUL
 echo Done!
@@ -125,6 +126,7 @@ echo[
 echo Installing Office 365 ProPlus...
 %~dp0\SOURCES\ProPlus\setup.exe /configure "%~dp0\SOURCES\ProPlus\install.xml" > NUL
 echo Done!
+echo[
 echo Installing Microsoft Visio...
 %~dp0\SOURCES\Visio\setup.exe /configure "%~dp0\SOURCES\Visio\install.xml" > NUL
 echo Done!
@@ -141,9 +143,11 @@ echo[
 echo Installing Office 365 ProPlus...
 %~dp0\SOURCES\ProPlus\setup.exe /configure "%~dp0\SOURCES\ProPlus\install.xml" > NUL
 echo Done!
+echo[
 echo Installing Microsoft Project...
 %~dp0\SOURCES\Project\setup.exe /configure "%~dp0\SOURCES\Project\install.xml" > NUL
 echo Done!
+echo[
 echo Installing Microsoft Visio...
 %~dp0\SOURCES\Visio\setup.exe /configure "%~dp0\SOURCES\Visio\install.xml" > NUL
 echo Done!
@@ -207,8 +211,13 @@ echo[
 echo Installing Office 365 Business...
 %~dp0\SOURCES\Business\setup.exe /configure "%~dp0\SOURCES\Business\install.xml" > NUL
 echo Done!
+echo[
+echo Installing Skype for Business...
+%~dp0\SOURCES\SkypeBusiness\setup.exe /configure "%~dp0\SOURCES\SkypeBusiness\install.xml" > NUL
+echo Done!
+echo[
 timeout /t 5 /nobreak > NUL
-goto :check_Office
+goto :check_Office_Skype
 
 
 :O365BusinessRetail_wProject
@@ -220,6 +229,11 @@ echo[
 echo Installing Office 365 Business...
 %~dp0\SOURCES\Business\setup.exe /configure "%~dp0\SOURCES\Business\install.xml" > NUL
 echo Done!
+echo[
+echo Installing Skype for Business...
+%~dp0\SOURCES\SkypeBusiness\setup.exe /configure "%~dp0\SOURCES\SkypeBusiness\install.xml" > NUL
+echo Done!
+echo[
 echo Installing Microsoft Project...
 %~dp0\SOURCES\Project\setup.exe /configure "%~dp0\SOURCES\Project\install.xml" > NUL
 echo Done!
@@ -236,6 +250,11 @@ echo[
 echo Installing Office 365 Business...
 %~dp0\SOURCES\Business\setup.exe /configure "%~dp0\SOURCES\Business\install.xml" > NUL
 echo Done!
+echo[
+echo Installing Skype for Business...
+%~dp0\SOURCES\SkypeBusiness\setup.exe /configure "%~dp0\SOURCES\SkypeBusiness\install.xml" > NUL
+echo Done!
+echo[
 echo Installing Microsoft Visio...
 %~dp0\SOURCES\Visio\setup.exe /configure "%~dp0\SOURCES\Visio\install.xml" > NUL
 echo Done!
@@ -252,6 +271,11 @@ echo[
 echo Installing Office 365 Business...
 %~dp0\SOURCES\Business\setup.exe /configure "%~dp0\SOURCES\Business\install.xml" > NUL
 echo Done!
+echo[
+echo Installing Skype for Business...
+%~dp0\SOURCES\SkypeBusiness\setup.exe /configure "%~dp0\SOURCES\SkypeBusiness\install.xml" > NUL
+echo Done!
+echo[
 echo Installing Microsoft Project...
 %~dp0\SOURCES\Project\setup.exe /configure "%~dp0\SOURCES\Project\install.xml" > NUL
 echo Done!
@@ -331,6 +355,7 @@ echo[
 echo Installing Office 365 Small Business...
 %~dp0\SOURCES\SmallBusiness\setup.exe /configure "%~dp0\SOURCES\SmallBusiness\install.xml" > NUL
 echo Done!
+echo[
 echo Installing Microsoft Project...
 %~dp0\SOURCES\Project\setup.exe /configure "%~dp0\SOURCES\Project\install.xml" > NUL
 echo Done!
@@ -347,6 +372,7 @@ echo[
 echo Installing Office 365 Small Business...
 %~dp0\SOURCES\SmallBusiness\setup.exe /configure "%~dp0\SOURCES\SmallBusiness\install.xml" > NUL
 echo Done!
+echo[
 echo Installing Microsoft Visio...
 %~dp0\SOURCES\Visio\setup.exe /configure "%~dp0\SOURCES\Visio\install.xml" > NUL
 echo Done!
@@ -363,9 +389,11 @@ echo[
 echo Installing Office 365 Small Business...
 %~dp0\SOURCES\SmallBusiness\setup.exe /configure "%~dp0\SOURCES\SmallBusiness\install.xml" > NUL
 echo Done!
+echo[
 echo Installing Microsoft Project...
 %~dp0\SOURCES\Project\setup.exe /configure "%~dp0\SOURCES\Project\install.xml" > NUL
 echo Done!
+echo[
 echo Installing Microsoft Visio...
 %~dp0\SOURCES\Visio\setup.exe /configure "%~dp0\SOURCES\Visio\install.xml" > NUL
 echo Done!
@@ -449,6 +477,7 @@ echo[
 echo Installing Microsoft Project...
 %~dp0\SOURCES\Project\setup.exe /configure "%~dp0\SOURCES\Project\install.xml" > NUL
 echo Done!
+echo[
 echo Installing Microsoft Visio...
 %~dp0\SOURCES\Visio\setup.exe /configure "%~dp0\SOURCES\Visio\install.xml" > NUL
 echo Done!
@@ -510,7 +539,7 @@ goto check_Skype
 COLOR 1F
 cls
 echo[
-echo SKYPE FOR BUSINESS BASIC / LYNCBASIC
+echo SKYPE FOR BUSINESS 2016
 echo[
 echo Installing Skype for Business 2016...
 %~dp0\SOURCES\SkypeBusiness\setup.exe /configure "%~dp0\SOURCES\SkypeBusiness\install.xml" > NUL
@@ -641,7 +670,7 @@ REG QUERY "HKEY_LOCAL_MACHINE\Software\Microsoft\Office\15.0\Common\InstallRoot\
 IF %errorlevel%==0 goto error_uninstall
 
 REM Office click-to-run installation?
-REG QUERY "HKLM\SOFTWARE\Wow6432Node\Microsoft\Office\14.0\Common\InstallRoot"
+REG QUERY "HKLM\SOFTWARE\Wow6432Node\Microsoft\Office\14.0\Common\InstallRoot" 2> NUL
 RIF %errorlevel%==0 goto error_uninstall
 
 REM Office 2016 32-bit
